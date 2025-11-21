@@ -1,0 +1,110 @@
+/* Style  global (0 marge par défaut).*/
+
+*{margin: 0;}
+
+/*Style de base de la page,couleur et police.*/
+
+body {font-family: 'Manrope', sans-serif; font-size: 1em; 
+background: #DA22FF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #9733EE, #DA22FF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #9733EE, #DA22FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+/*Style d'header et du footer.Couleur et espace.*/
+header,footer {  background-color: white;  padding: 20px 50px; }
+
+/* Alignement horizontale et propre des élèments*/
+
+footer,nav{display:flex; flex-direction: row; align-items: center;
+justify-content: space-between;}
+
+nav a {
+  margin-left: 30px;
+}
+
+
+/*Couleur des liens.*/
+
+a{color: black; text-decoration: none;}
+
+
+/* Caractères spéciaux,normal stoppe l'italique de base.*/
+
+em{color:black;font-style: normal;}
+
+/*Dimensions ,police et couleurs des titres, de la liste et du texte.*/
+
+h1{ font-size: 3.5em;  color: black;     
+  font-family: 'Montserrat', sans-serif; 
+}
+
+h2 { color: #f9f8ff;}
+
+p,li { font-size: 1.1em;   color: #f9f8ff;   }
+
+
+/* Effet au survol sur tous les liens */
+a:hover { text-decoration: underline;}
+
+/*Espace et réduction de luminosité au survol*/
+
+ .lien-icone{ margin-left: 30px;}
+
+ .lien-icone:hover {opacity: 0.5;}
+
+ /* Espace pour chaque section*/
+section { padding: 80px;}
+
+/* Boutons d'appels  à l'action*/
+/*Couleurs,bourdure et espace.*/
+
+.cta{ display:inline-block;
+ background: linear-gradient(#8e86b5, #acaeed); color:white ;
+border-radius: 50px;padding:20px 30px ;}
+
+
+/* Effet au survol spécifique sur les boutons d’action */
+.cta:hover {
+background: linear-gradient(#696484, #8788ba); 
+text-decoration: none;                      
+}
+
+
+
+/* Pour les autres écrans.*/
+
+@media screen and (max-width: 996px){
+
+
+/*Baisse de la taille du h1*/
+h1{
+  font-size: 2em;
+}
+
+/*Le menu passe en mode colonne et est centré*/
+
+header nav{ flex-direction: column; align-items: center;
+justify-content: center;
+}
+
+header nav img{
+  margin-bottom: 20px;
+
+}
+
+/*Réduction des espaces*/
+
+header,footer{ padding: 20px 20px;}
+
+section { padding: 50px 20px 50px 20px;}
+
+ nav a { margin-left: 10px; margin-right: 10px;}
+
+
+}
+
+
+
+

@@ -1,0 +1,70 @@
+/* ====== Bloc principal de contenu (cadre encadré) ====== */
+.carre-contenu {
+  border-right: 1px solid #8e86b5; /* Bordure droite violette fine */
+  border-bottom: 1px solid #8e86b5; /* Bordure inférieure violette fine */
+  padding: 50px;                    /* Espace intérieur du cadre */
+  width: 50%;                       /* Le bloc occupe la moitié de la largeur de la page */
+  margin: auto;                     /* Centre le bloc horizontalement */
+  margin-bottom: 80px;              /* Espace sous le bloc */
+}
+
+/* Espacement au-dessus du sous-titre dans le cadre */
+.carre-contenu h2 {
+  margin-top: 30px;
+}
+
+/* Espacement au-dessus de la liste dans le cadre */
+.carre-contenu ul {
+  margin-top: 30px;
+}
+
+/* Centre le lien “VOIR MON PORTFOLIO” placé après le cadre */
+.carre-contenu + div {
+  text-align: center;
+}
+
+/* Centre tout le contenu principal horizontalement */
+.a-propos-main {
+  margin: auto;
+}
+
+/* ====== Tableau des tarifs ====== */
+table {
+  color: white;                 /* Texte blanc */
+  text-align: center;           /* Texte centré dans les cellules */
+  width: 100%;                  /* Le tableau prend toute la largeur */
+  border-collapse: collapse;    /* Supprime les espaces entre les bordures */
+}
+
+/* Style commun aux cellules du tableau (lignes et en-têtes) */
+td,
+th {
+  padding: 15px;                /* Espacement intérieur */
+  border: 1px solid #a5b4fc;    /* Bordure violette claire */
+}
+
+/* Les cellules du corps du tableau ont un espacement vertical plus grand */
+td {
+  padding: 80px;
+}
+
+/* Espacement sous les sous-titres (ex: “Services”, “Tarifs”) */
+h2 {
+  margin-bottom: 80px;
+}
+
+/* Centre tous les titres */
+h1,
+h2 {
+  text-align: center;
+}
+
+/* ====== Responsive ======
+   Si l’écran fait moins de 996px de large :
+   on masque complètement la section “Tarifs” pour alléger l’affichage mobile.
+*/
+@media screen and (max-width: 996px) {
+  .section-tarifs {
+    display: none;
+  }
+}

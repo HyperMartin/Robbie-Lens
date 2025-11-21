@@ -1,0 +1,142 @@
+/* ===================== SECTION PHOTOS ===================== */
+.accueil-photos {
+  background-color: white;   /* Fond blanc pour contraster avec le reste du site */
+  padding: 80px;             /* Espacement intérieur global */
+}
+
+/* Titre de la section photos */
+.accueil-photos h2 {
+  color: #242424;            /* Texte sombre */
+  text-align: center;        /* Centré horizontalement */
+  margin-bottom: 80px;       /* Espace sous le titre */
+}
+
+/* Conteneur des rangées de photos */
+.accueil-photos div {
+  display: flex;             /* Les photos s’alignent sur une même ligne */
+  flex-direction: row;       /* Disposition horizontale */
+  gap: 15px;                 /* Espace entre chaque image */
+  justify-content: center;   /* Centre le groupe d’images */
+  margin-bottom: 15px;       /* Espace entre les deux rangées */
+}
+
+/* ===================== SECTION INTRODUCTION ===================== */
+.accueil-introduction {
+  display: flex;             /* Mise en page en deux colonnes (texte + image) */
+  flex-direction: row;
+  max-width: 1000px;         /* Largeur maximale pour un alignement propre */
+  align-items: flex-start;   /* Aligne les éléments en haut */
+  margin: auto;              /* Centre le tout sur la page */
+}
+
+/* Espacement sous le titre principal */
+.accueil-introduction h1 {
+  margin-bottom: 15px;
+}
+
+/* Espacement sous le paragraphe */
+.accueil-introduction p {
+  margin-bottom: 30px;
+}
+
+/* Ajoute un espace entre le texte et l’image */
+.accueil-introduction div {
+  padding-right: 80px;
+}
+
+/* ===================== SECTION CONTACT ===================== */
+.section-contact h2 {
+  color: #a5b4fc;            /* Titre violet clair */
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Formulaire de contact global */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;         /* Largeur fixe du formulaire */
+  margin: auto;              /* Centré horizontalement */
+  color: white;
+}
+
+/* Regroupe les champs "nom" et "email" sur la même ligne */
+.form-nom-email {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;                 /* Espace entre les deux colonnes */
+}
+
+/* Structure de chaque colonne (nom / email) */
+.form-column {
+  flex: 1;                   /* Chaque colonne prend la même largeur */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* Style général des champs du formulaire */
+input,
+textarea {
+  padding: 15px;             /* Espacement intérieur */
+  border-radius: 3px;        /* Coins légèrement arrondis */
+  border: none;              /* Pas de bordure visible */
+}
+
+/* Espacement entre le label et le champ */
+label {
+  margin-bottom: 10px;
+}
+
+/* Style du bouton “ENVOYER” */
+input[type='submit'] {
+  width: 200px;
+  margin: auto;
+  margin-top: 30px;
+}
+
+/* ===================== RESPONSIVE (petits écrans) ===================== */
+@media screen and (max-width: 996px) {
+
+  /* Réorganisation verticale de la section introduction */
+  .accueil-introduction {
+    flex-direction: column;         /* Passe en colonne */
+    align-items: center;            /* Centre les éléments */
+    justify-content: center;
+  }
+
+  /* Centre le texte et inverse l’ordre image/texte */
+  .accueil-introduction div {
+    padding-right: 0;
+    text-align: center;
+    order: 2;                       /* Le texte passe après l’image */
+  }
+
+  /* L’image passe avant le texte et prend toute la largeur */
+  .accueil-introduction img {
+    order: 1;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  /* Réduction des marges dans la galerie photo */
+  .accueil-photos {
+    padding: 20px;
+  }
+
+  /* Les photos passent les unes en dessous des autres */
+  .accueil-photos div {
+    flex-direction: column;
+  }
+
+  /* Ajuste les marges du formulaire sur mobile */
+  .section-contact {
+    padding: 50px 20px;
+  }
+
+  /* Empile les champs “nom” et “email” verticalement */
+  .form-nom-email {
+    flex-direction: column;
+    gap: 0;
+  }
+}

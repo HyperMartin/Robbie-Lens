@@ -1,0 +1,193 @@
+/*Style de base*/
+
+/* Applique la boîte de calcul standard à tous les éléments */
+
+*{box-sizing: border-box;}
+
+/*Supprime les marges par défaut.*/
+html,body{margin: 0;}
+
+/*Couleur et police du corps.*/
+
+body{color: black;background-color: white;
+font-family: 'Manrope', system-ui, Arial, sans-serif;}
+
+/* Dimensions pour forcer les images à ne jamais dépasser leur conteneur.*/
+img{display: block;max-width: 100%;height: auto;}
+
+/*EN TETE (couleur et bordure.*/
+
+header{ background: white;border-bottom: 1px solid #eee;}
+
+/* Flexbox permet de centrer les élèments*/
+/* align-items: center;  Aligne le logo et le menu verticalement */
+/* justify-content: space-between;  Sépare logo à gauche et menu à droite */
+
+header nav{
+max-width: 1200px;
+margin: 0 auto;
+padding: 16px 24px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+/*Couleur des liens du menu ,au survol ils sont surlignés.*/
+
+header a{ color: black;text-decoration: none;}
+header a:hover{ text-decoration: underline;}
+
+/* main > signifie 1er enfant section etc... de main .*/
+/* Espace autour du titre,couleur du bandeau */
+
+main > section:first-of-type {
+background: #DA22FF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #9733EE, #DA22FF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #9733EE, #DA22FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;   
+  padding: 72px 24px;    
+}
+
+/* Style du titre principal (couleur,espace et dimensions*/
+/*Clamp(taille(t.) petit écran,t.moyen ,t.grand)*/
+main > section:first-of-type h1{
+max-width: 1200px;
+margin:0 auto;
+font-family: 'Montserrat', sans-serif;
+font-weight: 700;
+color: white; 
+font-size: clamp(2.2rem, 4vw, 4rem);
+}
+
+/*Portfolio (espace et taille.)*/
+.portfolio-section-photos{max-width:1200px;margin:0 auto;
+font-size: 1.6rem;}
+
+/*CSS grid, 3 colonnes avec un espace de 24 px*/
+.grid-paysages, .grid-portraits{ 
+display: grid;
+grid-template-columns: repeat(3,1fr);
+gap: 24px; }
+
+/* Style des boutons des images miniatures (position ,espace...). */
+/* overflow: hidden;  Cache tout ce qui dépasse */
+/* aspect-ratio: 16 / 9; Maintient une forme 16:9 */
+/*  cursor: pointer;  Curseur main */
+
+.thumb{
+position: relative; border: 0; padding: 0;
+cursor: pointer; background: transparent;
+overflow: hidden;border-radius: 6px;
+aspect-ratio: 16 / 9;  
+}
+
+/*Dimensions des images.*/
+/*  object-fit: cover;Recadre sans déformation */
+/* transition: transform .25s;  Animation au survol */
+
+.thumb img{ width: 100%; height: 100%;
+object-fit: cover;    transition: transform .25s;  }
+
+/* Effet zoom au survol */
+.thumb:hover img { transform: scale(1.02); }
+
+/* Bande sombre affichée au survol */
+ /*inset: 0;   Remplit toute la vignette */
+ /*  place-items: center;  Centre le texte */
+
+.photo-hover{ position: absolute; inset:0;
+display: grid; place-items: center; color: white;
+background: rgba(0,0,0,.45);font-weight: 600;
+text-transform: uppercase;letter-spacing: .3px;
+opacity: 0;transition: opacity.2s;
+}
+
+/* Rend visible la bande sombre au survol ou au focus */
+.thumb:hover .photo-hover,
+.thumb:focus-visible .photo-hover {
+  opacity: 1;}
+
+  /*Les modals*/
+
+  /* Arrière-plan noir  quand la modale est ouverte */
+dialog::backdrop {background: black;}
+
+
+dialog { 
+border: none;           /* Supprime la bordure native */
+  border-radius: 8px;          /* Coins arrondis */
+  padding: 20px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3); /* Ombre douce */
+  text-align: center; width: 100%;
+  height: 100%;
+background-color: transparent; /* Fond transparent (image seule visible) */
+ overflow: hidden;              /* Supprime la barre de défilement */
+}
+
+
+/* Style de l’image agrandie dans la modale */
+/*object-fit: contain;  Garde les proportions */
+/*  max-width: 96vw; max-height: 92vh;  Empêche de dépasser l’écran */
+dialog[open] img {
+  max-width: 96vw; max-height: 92vh;  /* Empêche de dépasser l’écran */
+  width: 100%; height: 100%;
+  object-fit: contain;                
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;        /* Centre horizontalement */
+}
+
+
+/* Le bouton de fermeture “×” est caché par défaut */
+dialog .close-btn { display: none; }
+
+
+/* Il apparaît seulement quand la modale est ouverte */
+dialog[open] .close-btn {
+  display: grid; place-items: center; position: fixed;
+  top: 16px; left: 16px; width: 40px; height: 40px;
+  border: 0;  border-radius: 10px;
+  background: #e11d48;   color: #fff;
+  font-size: 22px; font-weight: 700;
+  cursor: pointer;
+}
+
+/*Footer*/
+ /* display: flex;  Logo + icônes sur une même ligne */
+/*  justify-content: space-between; Espace entre les deux extrémités */
+/* align-items: center;   Alignement vertical centré */
+
+
+footer{
+display: flex; justify-content: space-between; 
+align-items: center;   padding: 20px 30px;
+border-top: 1px solid #eee;background: white;
+}
+
+/*Image*/
+footer img{height: 28px;}
+
+/*Espace entres les logos.*/
+/* Conteneur pour les icônes de réseaux sociaux */
+.footer-icons {display: flex; gap: 20px; }
+
+/* Animation douce sur les icônes au survol */
+.footer-icons a img { transition: transform .2s;}
+
+/* Effet de transparence au survol */
+.footer-icons a:hover img { opacity: 0.5;}
+
+/* Supprime toute liste héritée dans le footer */
+footer ul, footer li {display: none;}
+
+
+/* En dessous de 900px → 2 colonnes dans les grilles */
+@media (max-width: 900px) {
+  .grid-paysages, .grid-portraits { grid-template-columns: 1fr 1fr; }
+}
+
+/* En dessous de 600px → 1 seule colonne */
+@media (max-width: 600px) {
+  .grid-paysages, .grid-portraits { grid-template-columns: 1fr; }
+}
+
+
