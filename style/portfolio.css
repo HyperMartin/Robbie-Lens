@@ -32,6 +32,16 @@ align-items: center;
 justify-content: space-between;
 }
 
+
+/* Liste de navigation horizontale */
+header nav ul {
+  list-style: none;                /* Supprime les puces */
+  display: flex;                   /* Met les éléments sur une ligne */
+  gap: 24px;                       /* Espacement entre les liens */
+  margin: 0;
+  padding: 0;
+}
+
 /*Couleur des liens du menu ,au survol ils sont surlignés.*/
 
 header a{ color: black;text-decoration: none;}
